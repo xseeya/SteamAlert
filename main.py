@@ -13,9 +13,10 @@ def check_online(steam_id : str):
 
     if status and game:
         return f'💬Status: {status.text}\nℹ️Game: {game.get_text(strip=True)}'
+    if status is None:
+        return f'💬Status: Private profile!'
     else:
         return f'💬Status: {status.text}'
-
 
 def alert():
     while True:
