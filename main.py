@@ -12,9 +12,9 @@ def check_online(steam_id : str):
     game = soup.find('div', 'profile_in_game_name')
 
     if status and game:
-        return f'💬{status.text}\nℹ️Игра: {game.get_text(strip=True)}'
+        return f'💬Status: {status.text}\nℹ️Game: {game.get_text(strip=True)}'
     else:
-        return f'💬{status.text}'
+        return f'💬Status: {status.text}'
 
 
 def alert():
@@ -22,7 +22,7 @@ def alert():
         for i in steam_acc:
             post(f'{tg_url}', data={
                 "chat_id": chat_id,
-                "text": f'🔎Ссылка на аккаунт: {i}\n\n{check_online(f'{i}')}',
+                "text": f'🔎Link to account: {i}\n\n{check_online(f'{i}')}',
                 "disable_web_page_preview": True,
                 "disable_notification": True,
             })
