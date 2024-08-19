@@ -2,5 +2,6 @@ timeout = 30  # Timeout between check each account in seconds
 tg_token = ''  # Token from @BotFather
 tg_url = f'https://api.telegram.org/bot{tg_token}/sendMessage'  # Base URL
 steam_acc = ['']  # Steam Links
+status_of_account = {}  # Do not change
 
 chat_id = ''
